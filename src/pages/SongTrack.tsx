@@ -11,10 +11,10 @@ export default function SongTrack() {
 
   useEffect(() => {
     let id = params.id
-    fetchSong(id)
+    id && fetchSong(id)
   }, [])
 
-  const fetchSong = async (id: string | undefined) => {
+  const fetchSong = async (id: string) => {
     try {
       const response = await fetch(
         `https://striveschool-api.herokuapp.com/api/deezer/track/${id}`
